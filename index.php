@@ -1,9 +1,7 @@
 <?php
-
-	include "vendor/FactoryRobot.php";
-	include "vendor/Robot1.php";
-	include "vendor/Robot2.php";
-	include "vendor/MergeRobot.php";
+	spl_autoload_register(function ($class_name) {
+		include 'vendor/' . $class_name . '.php';
+	});
 
 	$factory = new FactoryRobot();
 

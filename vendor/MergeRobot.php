@@ -2,12 +2,7 @@
 
 	class MergeRobot extends FactoryRobot
 	{
-		private $factory = [];
-
-		public function __construct ()
-		{
-			$this->factory = new FactoryRobot();
-		}
+		private $factory;
 
 		public function addRobot($robotType)
 		{
