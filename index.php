@@ -10,6 +10,6 @@
 	$factory->addType(new Robot2());
 
 	echo '<pre style="background: #272727; padding: 10px 15px; color: #088000; text-align: left; font-size: 13px;">';
-	    var_dump ($factory);
+	    var_dump ($factory->createRobot1(5));
 	echo '</pre>';
 	die ();
