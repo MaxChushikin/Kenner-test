@@ -2,30 +2,33 @@
 	class FactoryRobot
 	{
 		public $robot_types = [];
+		protected $robots = [];
 
 		public function addType ($robot)
 		{
-			$class = get_class($robot);
-
-			return $this->robot_types[$class] = [
-				'robot_obj' => $robot,
-				'count'		=> 0
-			];
+			return $this->robot_types[get_class($robot)] = $robot;
 		}
 
 		public function createRobot1 ($count)
 		{
-			$class = 'Robot1';
-			$this->robot_types[$class]['count'] = $count;
-
-			return $this->robot_types['Robot1'];
+			return $this->createRobots($this->robot_types['Robot2'], $count);
 		}
 
 		public function createRobot2 ($count)
 		{
-			$class = 'Robot2';
-			$this->robot_types[$class]['count'] = $count;
+			return $this->createRobots($this->robot_types['Robot2'], $count);
+		}
 
-			return $this->robot_types['Robot1'];
+		private function createRobots ($robot_type, $count)
+		{
+			$robots = [];
+
+			for ($i = 1; $i <= $count; $i++) {
+				$robots[] = clone $robot_type;
+			}
+
+			array_push($this->robots, $robots);
+
+			return $robots;
 		}
 	}
