@@ -1,6 +1,17 @@
 <?php
 	spl_autoload_register(function ($class_name) {
-		include 'vendor/' . $class_name . '.php';
+		try
+		{
+			if (!file_exists('vendor/' . $class_name . '.php')) {
+				throw new Exception('Failed to open uploaded file');
+			} else {
+				include 'vendor/' . $class_name . '.php';
+			}
+		}
+		catch (Exception $hi)
+		{
+			die("Class [ vendor/$class_name.php' ] is not exists");
+		}
 	});
 
 	$factory = new FactoryRobot();

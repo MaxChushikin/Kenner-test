@@ -22,9 +22,12 @@
 		{
 			$robots = [];
 
-			for ($i = 1; $i <= $count; $i++) {
-				$robots[] = clone $robot_type;
+			if ($robot_type){
+				for ($i = 1; $i <= $count; $i++) {
+					$robots[] = clone $robot_type;
+				}
 			}
+
 
 			array_push($this->robots, $robots);
 
