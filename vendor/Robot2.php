@@ -7,6 +7,13 @@
 		private $height;
 		private $weight;
 
+		public function __construct ($speed, $height, $weight)
+		{
+			$this->speed = $speed;
+			$this->height = $height;
+			$this->weight = $weight;
+		}
+
 		/**
 		 * @return int
 		 */
