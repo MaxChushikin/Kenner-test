@@ -23,6 +23,7 @@
 		{
 			$robots = [];
 
+
 			for ($i = 1; $i <= $count; $i++) {
 				$robots[] = clone $robot_type;
 			}

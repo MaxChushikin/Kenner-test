@@ -3,6 +3,11 @@
 	{
 		private object $factory;
 
+		protected int $speed = 0;
+		protected int $height = 0;
+		protected int $weight = 0;
+
+
 		public function __construct ()
 		{
 			$this->factory = new FactoryRobot();
@@ -10,23 +15,36 @@
 
 		public function addRobot($robotType)
 		{
-			$this->robot_types[get_class($robotType)] = $this->factory->addType($robotType);
+			if (is_array($robotType)){
+				array_unshift($this->robots, $robotType);
+			} elseif (is_object($robotType)){
+				$this->robot_types[get_class($robotType)] = $this->factory->addType($robotType);
+			}
 
 			return $this->robots;
 		}
 
-		public function getSpeed ()
+		/**
+		 * @return int
+		 */
+		public function getSpeed (): int
 		{
-			// TODO: Implement getSpeed() method.
+			return $this->speed;
 		}
 
-		public function getHeight ()
+		/**
+		 * @return int
+		 */
+		public function getHeight (): int
 		{
-			// TODO: Implement getHeight() method.
+			return $this->height;
 		}
 
-		public function getWeight ()
+		/**
+		 * @return int
+		 */
+		public function getWeight (): int
 		{
-			// TODO: Implement getWeight() method.
+			return $this->weight;
 		}
 	}

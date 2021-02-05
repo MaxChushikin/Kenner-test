@@ -1,16 +1,9 @@
 <?php
 	class Robot2 implements RobotInterface
 	{
-		private $speed;
-		private $height;
-		private $weight;
-
-		public function __construct ($speed, $height, $weight)
-		{
-			$this->speed = $speed;
-			$this->height = $height;
-			$this->weight = $weight;
-		}
+		private int $speed = 33;
+		private int $height = 33;
+		private int $weight = 33;
 
 		/**
 		 * @return int
