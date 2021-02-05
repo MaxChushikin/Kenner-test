@@ -7,7 +7,6 @@
 		protected int $height = 0;
 		protected int $weight = 0;
 
-
 		public function __construct ()
 		{
 			$this->factory = new FactoryRobot();

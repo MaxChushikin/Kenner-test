@@ -17,7 +17,13 @@
 	$merge_robot->addRobot($factory->createRobot1(2));
 	$merge_robot->addRobot($factory->createRobot2(5));
 
+	$factory->addType($merge_robot);
+
+	$res = reset($factory->createMergeRobot(1));
+
 	echo '<pre style="background: #272727; padding: 10px 15px; color: #088000; text-align: left; font-size: 13px;">';
-	var_dump ($merge_robot);
+	var_dump ($res->getSpeed());
+	var_dump ($res->getHeight());
+	var_dump ($res->getWeight());
 	echo '</pre>';
 	die ();
