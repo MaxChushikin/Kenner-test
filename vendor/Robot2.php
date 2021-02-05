@@ -1,7 +1,8 @@
 <?php
+	include_once 'RobotInterface.php';
+
 	class Robot2 implements RobotInterface
 	{
-
 		private $speed;
 		private $height;
 		private $weight;
